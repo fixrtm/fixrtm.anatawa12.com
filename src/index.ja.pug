@@ -3,7 +3,7 @@ extends _base.ja.pug
 block content
   section.sec-header
     .h1 fixRTM
-    p Improves the user experience in the RTM world
+    p RTMのユーザー体験を良くする
 
   section.sec-community
     h2 Community
@@ -15,17 +15,18 @@ block content
   section
     h2 GOALS
     p
-      | The goal of fixRTM is "Improve user experience of RTM".
-      | To achive this GOAL, There's several small goals below. Each goals are explained below.
+      | fixRTM のゴールは「RTMのユーザー体験を良くする」ことです。
+      | そのため、以下のゴールを定めました。
     ul
-      li: a(href='#goal-rtm') Improves RTM
-      li: a(href='#goal-tools') Provides tools for model pack authors
-      //-li: a(href='#goal-modelpacks') Make easier to use model packs
+      li: a(href='#goal-rtm') RTM を改善する
+      li: a(href='#goal-tools') ModelPack 作成のためのツールを作成する
+      //-li: a(href='#goal-modelpacks') ModelPackを使用しやすくする
     section
-      h3#goal-rtm Improves RTM
+      h3#goal-rtm RTM を改善する
       p
-        | RTM has several bugs but original author doesn't have enough time to fix all them. That's why this project will fix bugs of RTM.
-        | RTM also have some missing features which many needs them. This project will implement them.
+        | RTM はいくつかバグがありますが原作者は修正するのに十分な時間がありません。
+        | そのためこのプロジェクトでは RTM のバグを修正します。
+        | 多くの人が望むが RTM に実装されていない機能もあるため、それらも実装します。
       section
         h4 Subprojects for this goal
         ul
@@ -35,17 +36,17 @@ block content
     section
       h3#goal-tools Provides tools for model pack authors
       p
-        | Currently, there's no tools and documentation for modelpacks of latest RTM.
-        | This project is planned to provide documentation and linter.
+        | 現在、最新の RTM 向けのモデルパックのためのツールやドキュメントは見つかりません。
+        | そのためこのプロジェクトではツールやlinterを作成します。
       section
           h4 Subprojects for this goal
           ul
             li: a(href="#project-wiki") fixRTM official Wiki
     //- section
-      h3#goal-modelpacks Make easier to use model packs
-      p In my opinion, Current pack community has several problems below.
+      h3#goal-modelpacks ModelPackを使用しやすくする
+      p 現在のモデルパックコミュニティは以下の問題があると考えられます。
       ul
-        li Many author uses their own license
-        li Many author apply a license whose limitations may be changed by author.
-        li Many author uses PPAP, Passworded-zip, Password, Angouka(means encrypt in Japanese), Protocol
-      p They confuse model pack users.
+        li 各作者が各個人ごとのライセンスを使用してる
+        li 制限を将来変更可能なライセンスを使用してる作者がいる
+        li PPAP(パスワードZIP パスワード 暗号化 プロトコル)を使用している作者が多い
+      p これらはモデルパックユーザーを混乱させています。

@@ -6,24 +6,24 @@ block content
     ul.list-unstyled
       li: + gh_repo('fixrtm/fixRTM')
       li: + curse_forge('minecraft/mc-mods/fixrtm')
-    | The mod to patch RTM and ngtlib for 1.12.2.
+    | 1.12.2 版 RTM と NGTLib にパッチを当てるMOD
   h3 Description
   p
-    | This is the main subproject of fixRTM.
-    | The mod to fix bugs of RTM, implement some features.
-    | See github project for more details.
+    | fixRTMの主なサブプロジェクトです。
+    | このModは RTM のバグを修正し、いくつかの機能を追加するためのmodです。
+    | 詳細は GitHub のプロジェクトを参照してください。
   h3 Download
   p
     ul
-      li: a(href=links.curseFixRTMFiles) CurseForge for stable/SNAPSHOT release
-      li: a(href=links.ghFixRTMLatest) Latest release on Github
-      li: a(href=links.ghFixRTMReleases) Github For All Releases
+      li: a(href=links.curseFixRTMFiles) stableかSNAPSHOT リリースを CurseForge から
+      li: a(href=links.ghFixRTMLatest) 最新版リリースを Github から
+      li: a(href=links.ghFixRTMReleases) すべてのリリースを Github から
   h3 dependencies
   p
     ul
-      li RTM the latest version when the version of fixRTM get released
-      li NGTLib the latest version when the version of fixRTM get released
-      li Minecraft Forge 14.23.5.2847 or later
-    | There's Table between RTM, NGTLib, and fixRTM version #[a(href=links.ghFixRTMVersionMap) here].
-    | For each release of fixRTM, dependent version information will be exists in Release Note and @Mod annotation of
-    | fixRTM mod main class.
+      li fixRTM リリース時の RTM の最新版
+      li fixRTM リリース時の NGTlib の最新版
+      li Minecraft Forge 14.23.5.2847 以降
+    | #[a(href=links.ghFixRTMVersionMap) こちら]に RTM と NGTlib と fixRTM の間のバージョンの対応表があります。
+    | 各 fixRTM のリリースのリリースノートと mod のメインとなるクラスの
+    | @Mod アノテーションに前提バージョンの情報があります。

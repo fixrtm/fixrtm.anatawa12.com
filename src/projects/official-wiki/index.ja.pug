@@ -6,19 +6,20 @@ block content
     ul.list-unstyled
       li: +gh_repo('fixrtm/wiki-js-for-fixrtm')
       li: +glay_link('Wiki.js', 'wiki.fixrtm.com', links.wikiFixRTMAnatawa12Com)
-    | The wiki which has information about RTM and fixRTM.
+    | RTM と fixRTM の情報がある wiki
   h3 Description
   p
-    | This is the official wiki of fixRTM.
-    | This wiki will have many information for fixRTM as officially and for RTM and KaizPatchX unofficially.
+    | これは fixRTM 公式の wiki です。
+    | この wiki は fixRTM の情報を公式として、 RTM と KaizPatchX のを非公式に書かれます。
   p
-    | This wiki uses #[a(href=links.wikiJs) wiki.js], a simple multi-locale supported wiki system based on markdown and
-    | other text platforms.
+    | この wiki は #[a(href=links.wikiJs) wiki.js] という多言語対応でマークダウン等を記事で使用する
+    | wiki システムを使用します。
   p
-    | The wiki.js doesn't have enough features for me so fixRTM uses fork of wiki.js.
-    | The fork has following features:
+    | wiki.js 今回使用するのに十分な機能がなかったので fixRTM でフォークしました。
+    | このフォークでは以下の機能が追加されています、
     ul
-      li The fork has #[a(href=links.MDNAcceptLanguage) Accept-Language Header] based redirection to translated pages.
-      li The fork has translated login pages.
-      li The fork has link to terms of service on login page.
-      li The fork disallows to create page in non-markdown syntax.
+      li #[a(href=links.MDNAcceptLanguage) Accept-Language Header] をもとにした各言語のページへの
+        = "リダイレクトが実装されています。"
+      li 翻訳されたログインページがあります。
+      li ログインページに利用規約へのリンクがあります。
+      li markdown以外で記事が作成できません。
