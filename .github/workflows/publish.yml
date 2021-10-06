@@ -23,7 +23,7 @@ jobs:
 
       # building
       - name: Build
-        run: npm run build
+        run: npm ci && npm run build
 
       # publishing
       - name: Publisj
