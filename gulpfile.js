@@ -41,11 +41,13 @@ task('watch', parallel(task('watch-pug'), task('watch-browser')));
 
 task('build-bootstrap-css', () => src('node_modules/bootstrap/dist/css/bootstrap.min.css').pipe(dest('dist/css/')))
 task('build-bootstrap-js', () => src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js').pipe(dest('dist/js/')))
+task('build-CNAME', () => src('CNAME').pipe(dest('dist/')))
 
 task('build', series([
     task('build-pug'),
     task('build-bootstrap-css'),
     task('build-bootstrap-js'),
+    task('build-CNAME'),
 ]))
 
 task('default', series([
