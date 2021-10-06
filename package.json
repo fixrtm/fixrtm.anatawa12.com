@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "audit": "npm audit --production",
-    "build": "gulp"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
