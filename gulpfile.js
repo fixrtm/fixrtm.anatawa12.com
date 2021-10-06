@@ -82,6 +82,7 @@ class RedirectPageGenerator extends Transform {
 
         if (file.relative.match(/^[a-z]{2}\//)) {
             const relative = file.relative.substring(3);
+            const relativeUrl = relative.replace(/(?<=\/|\\|^)index\.html$/, '');
             const html = `<!doctype html><head><title>Redirecting by Locale...</title><script>`
                 +`const findLanguage = (langs) => {`
                 +`for (let locale of navigator.languages)`
@@ -89,13 +90,13 @@ class RedirectPageGenerator extends Transform {
                 +`if (locale.startsWith(lang)) return lang;`
                 +`return langs[0]`
                 +`};`
-                +`location.href = '/' + findLanguage(['en', 'ja']) + '/' + ${JSON.stringify(encodeURL(relative))};`
+                +`location.href = '/' + findLanguage(['en', 'ja']) + '/' + ${JSON.stringify(encodeURL(relativeUrl))};`
                 +`</script><body>`
                 +`<noscript>`
                 +`JavaScript is disabled. Please go to page depends on your language.`
                 +`<ul>`
-                +`<li><a href="${encodeHTML(`/en/${relative}`)}">english</a></li>`
-                +`<li><a href="${encodeHTML(`/ja/${relative}`)}">japanese</a></li>`
+                +`<li><a href="${encodeHTML(`/en/${relativeUrl}`)}">english</a></li>`
+                +`<li><a href="${encodeHTML(`/ja/${relativeUrl}`)}">japanese</a></li>`
                 +`</ul>`
                 +`</noscript>`
             const redirectFile = new File({
