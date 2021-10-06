@@ -15,7 +15,7 @@ jobs:
           # fetch the branch to be published
           git remote set-branches --add origin gh-pages
           # fetch tags to verify the tag is not exists
-          git fetch origin
+          git fetch --depth=2 origin
       - uses: anatawa12/something-releaser@v2
       - uses: actions/setup-node@v2
         with:
