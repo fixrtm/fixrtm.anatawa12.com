@@ -1,0 +1,29 @@
+extends ../../_base.en.pug
+
+block content
+  h2 Mod fixRTM
+  p
+    ul.list-unstyled
+      li: + gh_repo('fixrtm/fixRTM')
+      li: + curse_forge('minecraft/mc-mods/fixrtm')
+    | The mod to patch RTM and ngtlib for 1.12.2.
+  h3 Description
+  p
+    | This is the main subproject of fixRTM.
+    | The mod to fix bugs of RTM, implement some features.
+    | See github project for more details.
+  h3 Download
+  p
+    ul
+      li: a(href=links.curseFixRTMFiles) CurseForge for stable/SNAPSHOT release
+      li: a(href=links.ghFixRTMLatest) Latest release on Github
+      li: a(href=links.ghFixRTMReleases) Github For All Releases
+  h3 dependencies
+  p
+    ul
+      li RTM the latest version when the version of fixRTM get released
+      li NGTLib the latest version when the version of fixRTM get released
+      li Minecraft Forge 14.23.5.2847 or later
+    | There's Table between RTM, NGTLib, and fixRTM version #[a(href=links.ghFixRTMVersionMap) here].
+    | For each release of fixRTM, dependent version information will be exists in Release Note and @Mod annotation of
+    | fixRTM mod main class.

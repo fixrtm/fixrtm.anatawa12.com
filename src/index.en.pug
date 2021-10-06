@@ -1,0 +1,51 @@
+extends _base.en.pug
+
+block content
+  section.sec-header
+    .h1 fixRTM
+    p Improves the user experience in the RTM world
+
+  section.sec-community
+    h2 Community
+    ul.list-unstyled
+      li: +discord(links.discordInvite)
+      li: +gh_org('fixrtm')
+      li: +twitter('project_fixrtm')
+
+  section
+    h2 GOALS
+    p
+      | The goal of fixRTM is "Improve user experience of RTM".
+      | To achive this GOAL, There's several small goals below. Each goals are explained below.
+    ul
+      li: a(href='#goal-rtm') Improves RTM
+      li: a(href='#goal-tools') Provides tools for model pack authors
+      //-li: a(href='#goal-modelpacks') Make easier to use model packs
+    section
+      h3#goal-rtm Improves RTM
+      p
+        | RTM has several bugs but original author doesn't have enough time to fix all them. That's why this project will fix bugs of RTM.
+        | RTM also have some missing features which many needs them. This project will implement them.
+      section
+        h4 Subprojects for this goal
+        ul
+          li: a(href='#project-fixrtm') fixRTM
+          li: a(href='#project-kaiz-fork') Fork of KaizPatchX
+          li: a(href='#project-plugin-permissions') Plugin Permissions for NGT
+    section
+      h3#goal-tools Provides tools for model pack authors
+      p
+        | Currently, there's no tools and documentation for modelpacks of latest RTM.
+        | This project is planned to provide documentation and linter.
+      section
+          h4 Subprojects for this goal
+          ul
+            li: a(href="#project-wiki") fixRTM official Wiki
+    //- section
+      h3#goal-modelpacks Make easier to use model packs
+      p In my opinion, Current pack community has several problems below.
+      ul
+        li Many author uses their own license
+        li Many author apply a license whose limitations may be changed by author.
+        li Many author uses PPAP, Passworded-zip, Password, Angouka(means encrypt in Japanese), Protocol
+      p They confuse model pack users.

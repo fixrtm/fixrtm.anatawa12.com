@@ -1,0 +1,90 @@
+-
+  var projects = [
+    ['fixrtm', 'fixRTM'],
+    ['kaizpatchx', 'A fork of KaizPatchX'],
+    ['official-wiki', 'fixRTM Official Wiki'],
+    ['plugin-permissions', 'Plugin Permissions for NGT'],
+    ['mod-patching', 'mod-patching gradle plugin'],
+    ['jar-in-jar-mod', 'jar-in-jar-mod gradle plugin'],
+  ]
+// links should be listed up below
+-
+  const links = {
+    MDNAcceptLanguage: 'https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Language',
+    curseFixRTMFiles:'https://www.curseforge.com/minecraft/mc-mods/fixrtm/files',
+    ghFixRTMLatest: 'https://github.com/fixrtm/fixRTM/releases/latest',
+    ghFixRTMReleases: 'https://github.com/fixrtm/fixRTM/releases',
+    ghPluginPermissionsLatest: 'https://github.com/fixrtm/plugin-permissions-for-ngt/releases/latest',
+    ghFixRTMVersionMap: 'https://github.com/fixrtm/fixRTM/blob/HEAD/version-map.md',
+    ghKaizPatchXReadme: 'https://github.com/Kai-Z-JP/KaizPatchX#readme',
+    ghModPatchingReadme: 'https://github.com/fixrtm/mod-patching#readme',
+    wikiJs: 'https://js.wiki',
+    wikiFixRTMAnatawa12Com: 'http://wiki.fixrtm.anatawa12.com',
+    discordInvite: 'https://discord.gg/qFKcUXX',
+    logoMinSvg: 'https://github.com/fixrtm/artworks/raw/HEAD/dist/logo-min.svg',
+  };
+
+// Utility mixins
+
+mixin badge(logo, logoColor, label, labelColor, message, messageColor, link)
+  - var labelFixed = label.replaceAll('-', '--').replaceAll('_', '__')
+  - var messageFixed = message.replaceAll('-', '--').replaceAll('_', '__')
+  a(href=link)
+    img(src=`https://img.shields.io/badge/`
+    + `${encodeURIComponent(labelFixed)}-${encodeURIComponent(messageFixed)}-${encodeURIComponent(messageColor)}`
+    + `?logo=${encodeURIComponent(logo)}`
+    + `&logoColor=${encodeURIComponent(logoColor)}`
+    + `&labelColor=${encodeURIComponent(labelColor)}`)
+
+mixin gh_repo(path)
+  +badge('github', 'fff', 'Repository', '24292f', path, 'lightgrey', `https://github.com/${path}`)
+
+mixin gh_user(path)
+  +badge('github', 'fff', 'User', '24292f', `@${path}`, 'lightgrey', `https://github.com/${path}`)
+
+mixin gh_org(path)
+  +badge('github', 'fff', 'Organization', '24292f', `@${path}`, 'lightgrey', `https://github.com/${path}`)
+
+mixin glay_link(label, message, link)
+  +badge('', 'fff', label, 'gray', message, 'lightgray', link)
+
+mixin curse_forge(path)
+  +badge('curseforge', 'fff', 'Curse Forge', '6441a4', path, '9984bf', `https://www.curseforge.com/${path}`)
+
+mixin discord(link)
+  +badge('discord', 'fff', 'Discord', '6A7EC2', 'Join US', '7389D8', link)
+
+mixin twitter(display_name)
+  +badge('twitter', 'fff', 'follow me', '1da1f2', `@${display_name}`, 'blue', `https://twitter.com/${display_name}`)
+
+// common elements
+mixin header_nav(locale)
+  nav.sticky-top.navbar.navbar-light.bg-light.navbar-expand-md
+    div.container-fluid
+      a.navbar-brand(href=`/${locale}/`)
+        img(src=links.logoMinSvg height="30px" style="margin-top: -6px;")
+        | fixRTM
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href=`/${locale}/`) Home
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle#navbar-projects-dropdown(role="button" data-bs-toggle="dropdown" aria-expanded="false")
+              | Projects
+            ul.dropdown-menu(aria-labelledby="navbar-projects-dropdown")
+              each project in projects
+                li: a.dropdown-item(href=`/${locale}/projects/${project[0]}`) #{project[1]}
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle#navbar-language-dropdown(role="button" data-bs-toggle="dropdown" aria-expanded="false")
+              | Language
+            ul.dropdown-menu(aria-labelledby="navbar-language-dropdown")
+              li: a.dropdown-item#nav-locale-link-en() English
+              li: a.dropdown-item#nav-locale-link-ja() 日本語
+              script
+                | (() => {
+                |   const locale_link = (locale) => '/' + locale + location.pathname.substr(3);
+                |   document.querySelector('#nav-locale-link-en').href = locale_link('en');
+                |   document.querySelector('#nav-locale-link-ja').href = locale_link('ja');
+                | })()

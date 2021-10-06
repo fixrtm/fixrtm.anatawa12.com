@@ -1,0 +1,8 @@
+extends ../_base.ja.pug
+
+block content
+  section.sec-header
+    h2 Sub Projects
+    ul
+      each project in projects
+        li: a.dropdown-item(href=`/ja/projects/${project[0]}`) #{project[1]}

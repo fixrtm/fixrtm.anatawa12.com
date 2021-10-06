@@ -1,0 +1,24 @@
+extends ../../_base.en.pug
+
+block content
+  h2 fixRTM Official Wiki
+  p
+    ul.list-unstyled
+      li: +gh_repo('fixrtm/wiki-js-for-fixrtm')
+      li: +glay_link('Wiki.js', 'wiki.fixrtm.com', links.wikiFixRTMAnatawa12Com)
+    | The wiki which has information about RTM and fixRTM.
+  h3 Description
+  p
+    | This is the official wiki of fixRTM.
+    | This wiki will have many information for fixRTM as officially and for RTM and KaizPatchX unofficially.
+  p
+    | This wiki uses #[a(href=links.wikiJs) wiki.js], a simple multi-locale supported wiki system based on markdown and
+    | other text platforms.
+  p
+    | The wiki.js doesn't have enough features for me so fixRTM uses fork of wiki.js.
+    | The fork has following features:
+    ul
+      li The fork has #[a(href=links.MDNAcceptLanguage) Accept-Language Header] based redirection to translated pages.
+      li The fork has translated login pages.
+      li The fork has link to terms of service on login page.
+      li The fork disallows to create page in non-markdown syntax.
