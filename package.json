@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/fixrtm/fixrtm.anatawa12.com#readme",
   "devDependencies": {
-    "@types/browser-sync": "^2.26.2",
+    "@types/browser-sync": "^2.26.3",
     "@types/gulp": "^4.0.9",
     "@types/gulp-rename": "^2.0.1",
     "@types/vinyl": "^2.0.6",
